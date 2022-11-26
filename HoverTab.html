@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Tab</title>
+    <style>
+        .container{
+            display: flex;
+            height: 30vh;
+            border: 1px solid grey;
+        }
+        .tabbtn{
+            display: block;
+            width:20vw;
+            height:6vh;
+            background-color: inherit;
+            border: none;
+            text-align: left;
+            font-size: 20px;
+            font-weight: lighter;
+        }
+        .tabbtn:hover{
+            background-color:#ddd ;
+        }
+        .tablecontent{
+            display: none;
+            margin: 5px;
+        }
+        .buttons{
+            border-right: 1px solid grey;
+            background-color: #f1f1f1;
+        }
+        .active{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vertical tabs</h1>
+    <p>Click on the button inside table menu:</p>
+    <div class="container">
+        <div class="buttons">
+            <button class="tabbtn" onmouseover="disp('london')">London</button>
+            <button class="tabbtn" onmouseover="disp('Paris')">Paris</button>
+            <button class="tabbtn" onmouseover="disp('Tokyo')">Tokyo</button>
+        </div>
+        <div class="info">
+            <div id="london" class="tablecontent">
+                <h1>London</h1>
+                <p>London is the capital of the england</p>
+            </div>
+            <div id="Paris" class="tablecontent">
+                <h1>Paris</h1>
+                <p>Paris is the capital of the France</p>
+            </div>
+            <div id="Tokyo" class="tablecontent">
+                <h1>Tokyo</h1>
+                <p>Tokyo is the capital of the Japan</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function disp(city){
+            let info=document.getElementById(city);
+            const classes=document.getElementsByClassName("tablecontent")
+           for (let index = 0; index < classes.length; index++) {
+           classes[index].style.display="none";
+            
+           }
+            info.style.display="block";
+        }
+    </script>
+</body>
+</html>
